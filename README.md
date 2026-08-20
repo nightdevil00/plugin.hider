@@ -19,6 +19,8 @@ Click the chevron icon (`<` / `>`) in the right bar section:
 
 The hidden state persists across shell restarts.
 
+https://github.com/nightdevil00/plugin.hider/raw/main/screenrecording-2026-08-20_20-33-37.mp4
+
 ## How it works
 
 The plugin reads `bar.layout.right` from `~/.config/omarchy/shell.json`. When hiding, it moves every other entry in that section into a `hiddenEntries` array on its own layout entry and filters them out of `bar.layout.right`. When showing, it moves them back. The shell hot-reloads on save, so no restart is needed.
