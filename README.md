@@ -46,6 +46,12 @@ omarchy bar set plugin.hider keepVisible '["omarchy.bluetooth", "omarchy.network
 
 Plugins in `keepVisible` stay in the bar at all times and are not affected by the hide/show toggle.
 
+## Remove
+
+```bash
+omarchy plugin remove plugin.hider
+```
+
 ## How it works
 
 The plugin reads `bar.layout.right` from `~/.config/omarchy/shell.json`. When hiding, it moves every entry (except itself and `keepVisible` entries) into a `hiddenEntries` array on its own layout entry and filters them out of `bar.layout.right`. When showing, it moves them back. The shell hot-reloads on save, so no restart is needed.
