@@ -2,6 +2,8 @@
 
 A bar widget for [Omarchy](https://omarchy.org/) that lets you hide and show all plugins in the right bar section with a single click.
 
+![preview](https://github.com/nightdevil00/plugin.hider/blob/main/preview.png?raw=true)
+
 ![demo](https://github.com/nightdevil00/plugin.hider/blob/main/demo.gif?raw=true)
 
 ## Installation
