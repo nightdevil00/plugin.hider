@@ -2,6 +2,8 @@
 
 A bar widget for [Omarchy](https://omarchy.org/) that lets you hide and show all plugins in the right bar section with a single click.
 
+![demo](https://github.com/nightdevil00/plugin.hider/blob/main/demo.gif?raw=true)
+
 ## Installation
 
 ```bash
@@ -18,8 +20,6 @@ Click the chevron icon (`<` / `>`) in the right bar section:
 - **`>`** — hidden plugins are restored and the icon rotates back to `<`
 
 The hidden state persists across shell restarts.
-
-![demo](https://github.com/nightdevil00/plugin.hider/blob/main/demo.gif?raw=true)
 
 ## Settings
 
