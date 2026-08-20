@@ -21,13 +21,32 @@ The hidden state persists across shell restarts.
 
 https://github.com/nightdevil00/plugin.hider/blob/main/screenrecording-2026-08-20_20-33-37.mp4
 
-## How it works
-
-The plugin reads `bar.layout.right` from `~/.config/omarchy/shell.json`. When hiding, it moves every other entry in that section into a `hiddenEntries` array on its own layout entry and filters them out of `bar.layout.right`. When showing, it moves them back. The shell hot-reloads on save, so no restart is needed.
-
 ## Settings
 
-None. The widget has no user-configurable settings.
+Settings are configured in the widget's entry in `~/.config/omarchy/shell.json`:
+
+```json
+{
+  "id": "plugin.hider",
+  "keepVisible": ["omarchy.bluetooth", "omarchy.network"]
+}
+```
+
+| Key | Default | Description |
+|---|---|---|
+| `keepVisible` | `[]` | Plugin IDs that should never be hidden by the chevron toggle |
+
+You can set this with the CLI:
+
+```bash
+omarchy bar set plugin.hider keepVisible '["omarchy.bluetooth", "omarchy.network"]' --json
+```
+
+Plugins in `keepVisible` stay in the bar at all times and are not affected by the hide/show toggle.
+
+## How it works
+
+The plugin reads `bar.layout.right` from `~/.config/omarchy/shell.json`. When hiding, it moves every entry (except itself and `keepVisible` entries) into a `hiddenEntries` array on its own layout entry and filters them out of `bar.layout.right`. When showing, it moves them back. The shell hot-reloads on save, so no restart is needed.
 
 ## License
 

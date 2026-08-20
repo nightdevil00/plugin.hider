@@ -7,6 +7,7 @@ BarWidget {
   moduleName: "plugin.hider"
 
   readonly property string fontFamily: bar ? bar.fontFamily : Style.font.family
+  readonly property var keepVisible: setting("keepVisible", [])
   readonly property var rightEntries: bar && bar.layoutConfig ? (bar.layoutConfig.right || []) : []
   readonly property var hiddenEntries: {
     if (!bar || !bar.layoutConfig) return []
@@ -25,7 +26,7 @@ BarWidget {
   readonly property bool allHidden: {
     for (var i = 0; i < rightEntries.length; i++) {
       var eid = entryId(rightEntries[i])
-      if (eid !== root.moduleName) return false
+      if (eid !== root.moduleName && keepVisible.indexOf(eid) === -1) return false
     }
     return true
   }
@@ -40,7 +41,8 @@ BarWidget {
     var toHide = []
     for (var i = 0; i < rightEntries.length; i++) {
       var eid = entryId(rightEntries[i])
-      if (eid !== root.moduleName) toHide.push(rightEntries[i])
+      if (eid !== root.moduleName && keepVisible.indexOf(eid) === -1)
+        toHide.push(rightEntries[i])
     }
     if (toHide.length === 0) return
 
@@ -57,7 +59,8 @@ BarWidget {
       }
       var right = config.bar && config.bar.layout ? config.bar.layout.right : []
       config.bar.layout.right = right.filter(function(e) {
-        return entryId(e) === root.moduleName
+        var eid = entryId(e)
+        return eid === root.moduleName || root.keepVisible.indexOf(eid) !== -1
       })
     })
   }
