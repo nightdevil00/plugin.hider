@@ -9,7 +9,7 @@ A bar widget for [Omarchy](https://omarchy.org/) that lets you hide and show all
 ## Installation
 
 ```bash
-omarchy plugin add git@github.com:nightdevil00/plugin.hider.git --enable
+omarchy plugin add https://github.com/nightdevil00/plugin.hider.git --enable
 ```
 
 When prompted, choose **right** as the bar section placement.
