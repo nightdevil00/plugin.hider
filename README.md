@@ -19,7 +19,7 @@ Click the chevron icon (`<` / `>`) in the right bar section:
 
 The hidden state persists across shell restarts.
 
-https://github.com/nightdevil00/plugin.hider/blob/main/screenrecording-2026-08-20_20-33-37.mp4
+https://github.com/nightdevil00/plugin.hider/blob/main/demo.gif
 
 ## Settings
 
